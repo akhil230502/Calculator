@@ -30,33 +30,87 @@
   <body>
     <div class="container">
       <div class="row ms-1 mb-2 mt-1" style="text-align: center">
-        <div class="col-9 py-3 bg-secondary">0</div>
-        <div class="col bg-danger">C</div>
+        <div class="col-9 py-3 bg-secondary">
+          <input type="text" id="display" value=" " class="bg-secondary" />
+        </div>
+        <div class="col bg-danger">
+          <button class="btn btn-danger" onclick="clearData()">C</button>
+        </div>
       </div>
       <div class="row mb-2">
-        <div class="col bg-primary">1</div>
-        <div class="col bg-primary">2</div>
-        <div class="col bg-primary">3</div>
-        <div class="col bg-danger">/</div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('1')">1</button>
+        </div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('2')">2</button>
+        </div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('3')">3</button>
+        </div>
+        <div class="col bg-danger">
+          <button class="btn btn-danger" onclick="mainDisplay('/')">/</button>
+        </div>
       </div>
       <div class="row mb-2">
-        <div class="col bg-primary">4</div>
-        <div class="col bg-primary">5</div>
-        <div class="col bg-primary">6</div>
-        <div class="col bg-danger">*</div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('4')">4</button>
+        </div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('5')">5</button>
+        </div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('6')">6</button>
+        </div>
+        <div class="col bg-danger">
+          <button class="btn btn-danger" onclick="mainDisplay('*')">*</button>
+        </div>
       </div>
       <div class="row mb-2">
-        <div class="col bg-primary">7</div>
-        <div class="col bg-primary">8</div>
-        <div class="col bg-primary">9</div>
-        <div class="col bg-danger">-</div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('7')">7</button>
+        </div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('8')">8</button>
+        </div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('9')">9</button>
+        </div>
+        <div class="col bg-danger">
+          <button class="btn btn-danger" onclick="mainDisplay('-')">-</button>
+        </div>
       </div>
       <div class="row">
-        <div class="col bg-primary">0</div>
-        <div class="col bg-primary">.</div>
-        <div class="col bg-primary">=</div>
-        <div class="col bg-danger">+</div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('0')">0</button>
+        </div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="mainDisplay('.')">.</button>
+        </div>
+        <div class="col bg-primary">
+          <button class="btn btn-primary" onclick="output()">=</button>
+        </div>
+        <div class="col bg-danger">
+          <button class="btn btn-danger" onclick="mainDisplay('+')">+</button>
+        </div>
       </div>
     </div>
+    <script>
+      function mainDisplay(value) {
+        const display = document.getElementById("display");
+        if (display.value === 0) {
+          display.value = 0;
+        } else {
+          display.value = display.value + value;
+        }
+      }
+      function clearData() {
+      document.getElementById("display").value = "0";
+      }
+
+      function output() {
+        const display = document.getElementById("display");
+        display.value=eval(display.value);
+      }
+    </script>
   </body>
 </html>

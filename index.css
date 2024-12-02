@@ -1,7 +1,8 @@
 .container{
     width:500px;
-    height: 410px;
+    height: 500px;
     border: 2px solid black;
+    background-color: rgb(23, 18, 18);
 }
 
 .col{
@@ -20,4 +21,8 @@
     font: bold;
 
 }
-
+input{
+    background-color: royalblue;
+    opacity: 1;
+    border-radius: 20px;
+}
